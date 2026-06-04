@@ -12,19 +12,19 @@ Heart rate monitoring is essential for assessing cardiovascular health. Monitori
 
 ## Schematic – Full Circuit (Fritzing)
 
-![Full circuit schematic](circuit.png)
+![Full circuit schematic](circuit.jpg)
 
 The Fritzing schematic shows all connections: the PulseSensor’s signal wire to analog pin A0, VCC to 5V, GND to GND. The LCD is connected in 4‑bit mode using digital pins 12 (RS), 11 (EN), 5 (D4), 4 (D5), 3 (D6), and 2 (D7). An LED on pin 13 blinks with each detected heartbeat. A 1000 Ohm resistor limits current to the LED. The circuit is powered by the Arduino’s 5V output.
 
 ## High‑Level Design of Circuit Operation
 
-![High‑level design diagram](high_level.png)
+![High‑level design diagram](high_level.jpg)
 
 The high‑level diagram illustrates the flow of data: the heartbeat sensor captures analog signals from the finger (or earlobe). The Arduino reads the analog value, applies a threshold (default 550) to detect each pulse, calculates the time between beats to derive BPM, and then sends the BPM value to the LCD and serial monitor. The LED on pin 13 provides a visual beat indicator.
 
 ## Flowchart – Solution Algorithm
 
-![Flowchart](flowchart.png)
+![Flowchart](flowchart.jpg)
 
 The flowchart describes the software logic: after initialisation (setup of LCD, serial, PulseSensor object), the system enters an infinite loop. It continuously checks for a new beat using a function that detects the start of a heartbeat. When a beat is detected, it retrieves the BPM, prints a detection message to serial, displays the BPM on the LCD along with a custom heart icon, and blinks the LED. The LCD also shows instructions (“Put your finger on the sensor”) for the first few seconds.
 
