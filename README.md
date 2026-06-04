@@ -34,13 +34,10 @@ The flowchart describes the software logic: after initialisation (setup of LCD, 
 |----------------|-------------|----------------|--------------|----------|
 | Microcontroller| Arduino UNO | N/A            | N/A          | 1        |
 | Heartbeat sensor| PulseSensor / DS18B20 | Analog | Input | 1 |
-| Push button    | KY-012      | Digital        | Input        | 0 (not used) |
-| Buzzer         | N/A         | N/A            | N/A          | 0        |
 | Resistor       | 1000 Ohm    | N/A            | N/A          | 1        |
 | LED            | T-1         | Digital        | Output       | 1        |
 | LCD 16x2       | N/A         | Digital        | Output       | 1        |
 
-*Note: The push button and buzzer were not used in this design; only the LED and LCD are used as outputs.*
 
 ## Conclusion
 
